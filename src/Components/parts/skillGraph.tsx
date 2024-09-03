@@ -33,7 +33,7 @@ export const SkillGraph: React.FC<SkillGraphProps> = ({ skills }) => {
     scales: {
       r: {
         beginAtZero: true,
-        max: 100,
+        max: 5,
       },
     },
   };
