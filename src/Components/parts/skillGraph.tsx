@@ -10,4 +10,34 @@ import {
   Legend,
 } from 'chart.js';
 
-ChartJS.register()
+ChartJS.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip, Legend);
+
+interface SkillGraphProps {
+  skills: { name:string; level: number }[];
+}
+
+export const SkillGraph: React.FC<SkillGraphProps> = ({ skills }) => {
+  const data = {
+    labels: skills.map(skill => skill.name),
+    datasets: [
+      {
+        label: 'Skill Leval',
+        data: skills.map(skill => skill.level),
+        backgroundColer: 'rgba(34, 202, 236, 0.2)',
+        borderColer: 'rgba(34, 202, 236, 1)',
+        borderWidth: 2,
+      }
+    ]
+  }
+  const options = {
+    scales: {
+      r: {
+        beginAtZero: true,
+        max: 100,
+      },
+    },
+  };
+
+  return <Radar data={data} options={options} />;
+}
+
