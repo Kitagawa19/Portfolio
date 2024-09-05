@@ -6,7 +6,7 @@ import { Container, Typography, Card, CardContent, CardActionArea, Grid2 } from 
 
 export const BlogPage:NextPage<Props> = ({ blogs }) => {
   return(
-    <>
+    <div>
       <Container maxWidth="md" sx={{ mt: 4, mb: 4 }}>
         <Typography variant="h4" component="h1" sx={{ mb: 4 }}>
           ブログ一覧
@@ -31,7 +31,7 @@ export const BlogPage:NextPage<Props> = ({ blogs }) => {
           ))}
         </Grid2>
       </Container>
-    </>
+    </div>
   )
 }
 
