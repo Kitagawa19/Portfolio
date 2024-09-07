@@ -19,11 +19,11 @@ const backendSkills = [
 export const SkillTreePage: React.FC = () => {
     return (
         <Container>
-            <Typography variant="h3">Frontend Skills</Typography>
+            <Typography variant="h5">Frontend Skills</Typography>
             <Box>
                 <SkillGraph skills={frontendSkills} />
             </Box>
-            <Typography variant="h3">Backend Skills</Typography>
+            <Typography variant="h5">Backend Skills</Typography>
             <Box>
                 <SkillGraph skills={backendSkills} />
             </Box>
