@@ -7,7 +7,7 @@ export const client = createClient({
 
 export async function getArticles() {
   const response = await client.get({
-    endpoint: 'articles',
+    endpoint: 'blog',
     queries: {orders: '-publishedAt'}
   })
   return response.contents
@@ -15,7 +15,7 @@ export async function getArticles() {
 
 export async function getArticle(id: string){
   const response = await client.get({
-    endpoint: 'articles',
+    endpoint: 'blog',
     contentId: id
   })
   return response
