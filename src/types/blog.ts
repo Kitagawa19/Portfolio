@@ -1,19 +1,13 @@
+import { MicroCMSImage, MicroCMSListContent, MicroCMSListResponse } from 'microcms-js-sdk'
+
+import { Category } from './Category'
+
 export type Blog = {
-  id: string;
-  title: string;
-  content: string;
-  eyecatch: string;
-  category: string;
-  publishedAt: string;
-};
-
-export type BlogResponse = {
-  contents: Blog[];
-  totalCount: number;
-  offset: number;
-  limit: number;
-};
-
-export type Props = {
-  blogs: Blog[];
+  title: string
+  category: Category & MicroCMSListContent
+  toc_visible: boolean
+  body: string
+  description: string
+  ogimage: MicroCMSImage
+  related_blogs: MicroCMSListResponse<Blog>['contents']
 }
