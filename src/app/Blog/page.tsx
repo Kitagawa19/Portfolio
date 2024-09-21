@@ -2,9 +2,10 @@ import React,{ useState,useEffect}  from 'react';
 import Link from 'next/link';
 import { getArticles } from  '@/libs/client';
 import  Image from 'next/image';
+import { Post } from '@/types/Blog';
 
 export default function BlogListPage() {
-    const [posts,setPosts] = useState([]);
+    const [posts,setPosts] = useState<Post[]>([]);
     useEffect(() => {
         const fetchPosts = async () => {
             const articles = await getArticles();
@@ -31,7 +32,6 @@ export default function BlogListPage() {
               )}
               <div>
                 <p className="text-sm text-gray-600">{post.category?.name || '未分類'}</p>
-                <p className="text-sm text-gray-500">ステータス: {post.status}</p>
               </div>
             </div>
           </Link>
