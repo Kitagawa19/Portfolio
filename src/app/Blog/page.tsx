@@ -31,7 +31,7 @@ export default function BlogListPage() {
                 />
               )}
               <div>
-                <p className="text-sm text-gray-600">{post.category?.name || '未分類'}</p>
+                <p className="text-sm text-gray-600">{post.category}</p>
               </div>
             </div>
           </Link>
