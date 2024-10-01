@@ -1,22 +1,37 @@
 import { createClient } from 'microcms-js-sdk';
+import type {
+  MicroCMSQueries,
+  MicroCMSDate,
+} from "microcms-js-sdk";
+import { Blog, BlogDetail } from '@/types/Blog';
 
 export const client = createClient({
   serviceDomain: process.env.MICROCMS_SERVICE_DOMAIN || '',
   apiKey: process.env.MICROCMS_API_KEY || '',
 });
 
-export async function getArticles() {
-  const response = await client.get({
-    endpoint: 'blog',
-    queries: {orders: '-publishedAt'}
-  })
-  return response.contents
+if (!process.env.MICROCMS_SERVICE_DOMAIN) {
+  throw new Error('Please set your  SERVICE_DOMAIN');
 }
 
-export async function getArticle(id: string){
-  const response = await client.get({
-    endpoint: 'blog',
-    contentId: id
-  })
-  return response
+if(!process.env.MICROCMS_API_KEY) {
+  throw new Error('Please set your API_KEY');
+}
+
+
+export const getBlogList = async(queries?:MicroCMSQueries) => {
+  const data = await client.get<Blog>({
+    endpoint: 'blogs',
+    queries,
+  });
+  return data;
+}
+
+export const getBlogDetail = async(contentId:string,queries?:MicroCMSQueries) => {
+  const data = await client.get<BlogDetail>({
+    endpoint: `blogs/`,
+    contentId,
+    queries,
+  });
+  return data;
 }
