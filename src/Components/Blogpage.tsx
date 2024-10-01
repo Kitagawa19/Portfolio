@@ -12,11 +12,6 @@ export default async function BlogPage() {
       <Box>
         {contents.map((post: Blog) => (
           <Box key={post.id} mb={4}>
-            <Typography variant="h4">
-              <Link href={`/blog/${post.id}`}>
-                {post.title}
-              </Link>
-            </Typography>
             {post.eyecatch && (
               <Box mt={2}>
                 <Image
@@ -25,6 +20,11 @@ export default async function BlogPage() {
                   width={post.eyecatch.width} 
                   height={post.eyecatch.height} 
                 />
+                <Typography variant="h4">
+                  <Link href={`/blog/${post.id}`}>
+                    {post.title}
+                  </Link>
+                </Typography>
               </Box>
             )}
             <Typography variant="body2" color="textSecondary">
