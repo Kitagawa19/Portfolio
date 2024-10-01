@@ -7,7 +7,6 @@ import Image from "next/image";
 
 export default async function BlogPage() {
   const { contents } = await getBlogList();
-
   return (
     <Container>
       <Box>
