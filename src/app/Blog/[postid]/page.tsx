@@ -22,6 +22,12 @@ export default function BlogDetailPage ({data}:{data:BlogDetail}) {
   return (
     <Container>
       <Typography variant="h3">{data.title}</Typography>
+      <Typography variant="body2" color="textSecondary">
+        {data.publishedAt}
+      </Typography>
+      <Typography variant="body2" color="textSecondary">
+        Category: {data.category || "Uncategorized"}
+      </Typography>
       <Box mt={2}>
         {data.eyecatch && (
           <Box>
