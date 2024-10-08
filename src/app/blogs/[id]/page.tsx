@@ -13,12 +13,14 @@ export default async function BlogPage({ params }: { params: { id: string } }) {
   }
 
   return (
-    <Container>
+    <div>
       <Header />
-      <Suspense fallback={<p>Loading...</p>}>
-        <BlogDetailComponent blogDetail={blogDetail} />
-      </Suspense>
-    </Container>
+      <Container>
+        <Suspense fallback={<p>Loading...</p>}>
+          <BlogDetailComponent blogDetail={blogDetail} />
+        </Suspense>
+      </Container>
+    </div>
   );
 }
 
