@@ -19,7 +19,7 @@ const backendSkills = [
 export const SkillTreePage: React.FC = () => {
   return (
     <Container>
-      <Typography variant="h4" align="center" gutterBottom>
+      <Typography variant="h3" align="center" gutterBottom style={{ fontWeight: 'bold', letterSpacing: '1px', color: '#333' }}>
         スキルツリー
       </Typography>
 
