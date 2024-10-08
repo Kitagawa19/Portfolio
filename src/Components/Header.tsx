@@ -9,8 +9,8 @@ export const Header: React.FC = () => {
       <AppBar
         position="static"
         sx={{
-          backgroundColor: '#333', 
-          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', 
+          backgroundColor: '#333',
+          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
         }}
       >
         <Toolbar>
@@ -31,6 +31,14 @@ export const Header: React.FC = () => {
             }}
           >
             <Link href='/'>ポートフォリオサイト</Link>
+          </Typography>
+          <Typography
+            variant="h6"
+            component="div"
+          >
+            <Link href='/bloglist' color="inherit" >
+              Blog
+            </Link>
           </Typography>
         </Toolbar>
       </AppBar>
