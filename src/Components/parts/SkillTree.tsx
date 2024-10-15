@@ -20,7 +20,7 @@ export const SkillTreePage: React.FC = () => {
   return (
     <Container>
       <Typography variant="h3" align="center" gutterBottom style={{ fontWeight: 'bold', letterSpacing: '1px', color: '#333' }}>
-        スキルツリー
+        Skill Tree
       </Typography>
 
       <Box

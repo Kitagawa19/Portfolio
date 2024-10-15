@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography, Box, Container,Avatar } from "@mui/material";
+import { QualificationsTable } from "@/Components/parts/qualification";
 
 export const MyProfile:React.FC = () => {
   return (
@@ -37,9 +38,10 @@ export const MyProfile:React.FC = () => {
     <Typography 
       variant="h6" 
       color="textSecondary" 
-      style={{ marginBottom: '8px', fontStyle: 'italic', color: '#7f8c8d' }}
+      style={{ marginBottom: '8px', color: '#7f8c8d' }}
     >
-      フルスタックエンジニア / AI開発者
+      所属：京都デザイン＆テクノロジー専門学校<br />
+      専攻：スーパーAIクリエイター専攻
     </Typography>
   </Box>
   <Box textAlign="center" mt={4}>
@@ -57,9 +59,17 @@ export const MyProfile:React.FC = () => {
       paragraph 
       style={{ lineHeight: '1.8', color: '#7f8c8d' }}
     >
-      現在、生成AIとクラウド技術を活用した新しいアプリケーションの開発に取り組んでいます。
+      現在、生成AIとクラウド技術を活用した新しいアプリケーションの開発に取り組んでいます。<br />
       また、競技プログラミングのスキルを向上させることを目指し、アルゴリズムの学習を続けています。
     </Typography>
+    <Box
+        display="flex"
+        flexWrap="wrap"
+        justifyContent="center"
+        gap={4}
+      >
+    <QualificationsTable />
+    </Box>
   </Box>
 </Container>
   )
