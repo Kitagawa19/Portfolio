@@ -18,18 +18,25 @@ export const QualificationsTable = () => {
       >
         取得資格
       </Typography>
-
       <List>
-        {qualifications.map((qualification, index) => (
-          <Box key={index}>
-            <ListItem sx={{ display: 'flex', justifyContent: 'space-between' }}>
-              <ListItemText primary={qualification.name} />
-              <ListItemText primary={qualification.date} sx={{ textAlign: 'right' }} />
-            </ListItem>
-            {index < qualifications.length - 1 && <Divider />}
-          </Box>
-        ))}
-      </List>
+      {qualifications.map((qualification, index) => (
+        <Box key={index} sx={{ paddingY: 1 }}>
+          <ListItem sx={{ display: 'flex', alignItems: 'center' }}>
+            <ListItemText
+              primary={qualification.name}
+              primaryTypographyProps={{ variant: 'subtitle1', fontWeight: 'bold' }}
+              sx={{ flexGrow: 1 }}
+            />
+            <ListItemText
+              primary={qualification.date}
+              primaryTypographyProps={{ variant: 'subtitle2', color: 'text.secondary' }}
+              sx={{ textAlign: 'right' }}
+            />
+          </ListItem>
+          {index < qualifications.length - 1 && <Divider variant="middle" />}
+        </Box>
+      ))}
+    </List>
     </Box>
   );
 };

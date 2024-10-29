@@ -46,7 +46,6 @@ export const MyProfile: React.FC = () => {
       </Box>
       <Box textAlign="center" mt={4}>
         <Box display="flex" justifyContent="center" flexWrap="wrap" gap={6}>
-          {/* 自己紹介セクション */}
           <Box flex={1} minWidth={300}>
             <Typography
               variant="h5"
@@ -70,8 +69,6 @@ export const MyProfile: React.FC = () => {
               今後もフロントエンドとバックエンドのスキルをさらに高め、より高度なアプリケーション開発に挑戦したいと考えています。
             </Typography>
           </Box>
-
-          {/* 現在の目標セクション */}
           <Box flex={1} minWidth={300}>
             <Typography
               variant="h5"
@@ -96,8 +93,6 @@ export const MyProfile: React.FC = () => {
             </Typography>
           </Box>
         </Box>
-
-        {/* 資格セクション */}
         <Box display="flex" flexWrap="wrap" justifyContent="center" gap={4} mt={4}>
           <QualificationsTable />
         </Box>
