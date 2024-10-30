@@ -18,25 +18,25 @@ export const QualificationsTable = () => {
       >
         取得資格
       </Typography>
-      <List>
-      {qualifications.map((qualification, index) => (
-        <Box key={index} sx={{ paddingY: 1 }}>
-          <ListItem sx={{ display: 'flex', alignItems: 'center' }}>
-            <ListItemText
-              primary={qualification.name}
-              primaryTypographyProps={{ variant: 'subtitle1', fontWeight: 'bold' }}
-              sx={{ flexGrow: 1 }}
-            />
-            <ListItemText
-              primary={qualification.date}
-              primaryTypographyProps={{ variant: 'subtitle2', color: 'text.secondary' }}
-              sx={{ textAlign: 'right' }}
-            />
-          </ListItem>
-          {index < qualifications.length - 1 && <Divider variant="middle" />}
-        </Box>
-      ))}
-    </List>
+      <Box display="flex" justifyContent="space-between" mx="auto" mt={2} mb={1} sx={{ maxWidth: '600px',borderBottom: '1px solid #ddd', paddingBottom: '8px' }}>
+    <Typography variant="subtitle1" style={{ fontWeight: 'bold', color: '#555' }}>
+      資格名
+    </Typography>
+    <Typography variant="subtitle1" style={{ fontWeight: 'bold', color: '#555', textAlign: 'right' }}>
+      取得日
+    </Typography>
+  </Box>
+  <List>
+    {qualifications.map((qualification, index) => (
+      <Box key={index} sx={{ paddingY: 1, mx: 4 }}>
+        <ListItem sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <ListItemText primary={qualification.name} primaryTypographyProps={{ fontWeight: 'bold' }} />
+          <ListItemText primary={qualification.date} sx={{ textAlign: 'right', color: '#7f8c8d', minWidth: '120px'  }} />
+        </ListItem>
+        {index < qualifications.length - 1 && <Divider />}
+      </Box>
+    ))}
+  </List>
     </Box>
   );
 };
