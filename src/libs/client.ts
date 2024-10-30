@@ -27,11 +27,14 @@ export const getBlogList = async(queries?:MicroCMSQueries) => {
   return data;
 }
 
-export const getBlogDetail = async(contentId:string,queries?:MicroCMSQueries) => {
+export const getBlogDetail = async (contentId: string, queries?: MicroCMSQueries) => {
   const data = await client.get<BlogDetail>({
     endpoint: 'blogs',
     contentId,
-    queries,
+    queries: {
+      ...queries,
+      fields: "id,createdAt,updatedAt,title,content,eyecatch,category"
+    },
   });
   return data;
-}
+};
