@@ -20,27 +20,27 @@ export const MyProfile: React.FC = () => {
           gutterBottom
           style={{ fontWeight: 'bold', letterSpacing: '1px', color: '#333' }}
         >
-          My Profile
+          My Profile 
         </Typography>
         <Avatar
           alt="Your Name"
-          src="src/app/favicon.ico"
+          src="/GitHubIcon.png"
           sx={{ width: 160, height: 160, boxShadow: '0px 4px 12px rgba(0, 0, 0, 0.1)' }}
         />
         <Typography
           variant="h4"
           component="h1"
-          style={{ marginTop: '16px', fontWeight: '500', color: '#2c3e50' }}
+          style={{ marginTop: '8px', fontWeight: '500', color: '#2c3e50' }}
         >
-          Kota Kitagawa
+          Kota Kitagawa 
         </Typography>
-
         <Typography
           variant="h6"
           color="textSecondary"
           style={{ marginBottom: '8px', color: '#7f8c8d' }}
         >
           所属：京都デザイン＆テクノロジー専門学校<br />
+          学科：スーパーAI＆テクノロジー科<br />
           専攻：スーパーAIクリエイター専攻
         </Typography>
       </Box>
